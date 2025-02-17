@@ -5,7 +5,7 @@ options = [["17 to 20","21 to 30"],["male","female"],["undergraduate","postgradu
 def getGeminiResponse(question,options):
     client = genai.Client(api_key="AIzaSyAmgD8UCMqU6Q8PexJGF67TZwWZl1Pd0WY")
 
-    prompt = "Help me fill this form giving human-like reliable responses assuming you are a random person everytime by choosing the options and return only the option number instead of values\n I need only the response and zero explanation on anything\n"
+    prompt = "Help me fill this form giving human-like reliable responses assuming you are a random person everytime by choosing the options and return only the option number instead of values in the pattern [question number].[space][answer]\n"
     for i in range(len(question)):
         prompt=prompt+str(i+1)+question[i]+"\n"
         
@@ -17,6 +17,7 @@ def getGeminiResponse(question,options):
         contents=prompt
     )
     responseContent = response.text
+    print(responseContent)
     ans=[]
     for i in range(len(responseContent)):
         if responseContent[i].isdigit() and responseContent[i+1]=="." and responseContent[i+3].isdigit():

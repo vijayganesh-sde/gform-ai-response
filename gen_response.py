@@ -66,11 +66,7 @@ def generate_responses(total_responses,form_link):
         rangebuttons = question.find_elements(By.CLASS_NAME,"Zki2Ve")
         if radiobuttons==[] and rangebuttons==[]:
           continue
-        else:
-          questionsBucket.append(question.text.split("\n")[0])
         try:
-          
-
           if radiobuttons!=[]:
             temp=[]
             
@@ -82,7 +78,6 @@ def generate_responses(total_responses,form_link):
           print("no radio buttons")
         
         try:
-          
 
           rand_choice=responseAnswers[resp_ptr]
           resp_ptr+=1
@@ -100,4 +95,4 @@ def generate_responses(total_responses,form_link):
     total_responses-=1
     time.sleep(1)
     
-# generate_responses(1,"https://docs.google.com/forms/d/e/1FAIpQLSdpb6AOaXRNqBa6VPCGjcs-v6QcQ12KHBHCpduiS18hoEM4Gw/viewform")
+# generate_responses(3,"https://docs.google.com/forms/d/e/1FAIpQLSdpb6AOaXRNqBa6VPCGjcs-v6QcQ12KHBHCpduiS18hoEM4Gw/viewform")
