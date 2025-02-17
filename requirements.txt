@@ -1,0 +1,6 @@
+flask
+selenium
+requests
+google-genai
+gunicorn
+Werkzeug

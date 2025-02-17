@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    function loadingIT(){ 
+      document.getElementById("content").style.display = 'none';
+      document.getElementById("loading").innerHTML="Loading....";
+    }
+  </script>
+  <form id="content" method="POST" action="/generate_responses">
+  Enter the link of the File :
+  <input type="text" id="link" name="link" style="width: 50%;" placeholder="enter link..." /><br /><br />
+  Enter number of responses : 
+  <input type="text" style="width: 20%;" id="resp" name="resp" placeholder="enter number of responses..." /><br /><br />
+  <input type="submit" value="Submit" onclick="loadingIT()"></form>
+  <div id="loading"></div>
+  
